@@ -1,0 +1,11 @@
+1. TIL 작성: Today I Learn 
+git 설치, github 연동, gitbash 필수 명령어, git 브랜치 새로파기, 커밋, 푸시 
+
+2. Keep 유지할 것
+git bash 명령어 계속 타이핑 하기
+
+3. problem 개선할 것
+오늘은 없어보임
+
+4. try 시도할 것
+또 유용한 git bash 명령어 학습하여 활용하기
