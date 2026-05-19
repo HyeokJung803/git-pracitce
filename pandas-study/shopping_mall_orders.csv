@@ -1,0 +1,101 @@
+﻿customer_id,category,product_name,price,quantity,total_amount,rating
+User_007,Books,Biography,24,3,72,5.0
+User_007,Clothing,Jacket,101,3,303,4.0
+User_004,Beauty,Shampoo,11,4,44,5.0
+User_006,Clothing,Socks,35,1,35,4.0
+User_012,Electronics,Laptop,524,3,1572,4.0
+User_016,Beauty,Facial Cream,64,4,256,4.0
+User_003,Home,Coffee Mug,139,1,139,4.0
+User_018,Books,Fiction Novel,37,2,74,5.0
+User_009,Clothing,Hoodie,16,4,64,3.0
+User_007,Books,Biography,17,3,51,3.0
+User_017,Books,Python Guide,17,4,68,4.0
+User_006,Clothing,Socks,68,1,68,
+User_012,Clothing,Jeans,76,4,304,4.0
+User_016,Books,Fiction Novel,39,4,156,5.0
+User_013,Clothing,Hoodie,38,2,76,
+User_013,Electronics,Smart Watch,64,1,64,2.0
+User_007,Electronics,Laptop,697,4,2788,1.0
+User_019,Electronics,Wireless Earbuds,468,1,468,5.0
+User_010,Clothing,T-Shirt,42,3,126,
+User_012,Clothing,T-Shirt,62,3,186,4.0
+User_005,Beauty,Facial Cream,44,1,44,4.0
+User_015,Beauty,Lipstick,14,2,28,3.0
+User_014,Beauty,Lipstick,24,2,48,1.0
+User_013,Beauty,Lipstick,61,1,61,4.0
+User_005,Home,Coffee Mug,33,4,132,
+User_007,Beauty,Perfume,37,2,74,5.0
+User_006,Books,Comic Book,21,4,84,4.0
+User_011,Clothing,Socks,103,3,309,
+User_001,Electronics,Wireless Earbuds,682,4,2728,4.0
+User_003,Beauty,Lipstick,71,1,71,5.0
+User_010,Books,History Book,31,4,124,4.0
+User_009,Books,Fiction Novel,39,1,39,3.0
+User_012,Clothing,Jacket,115,1,115,
+User_017,Clothing,Jeans,106,2,212,1.0
+User_001,Electronics,Wireless Earbuds,1126,4,4504,4.0
+User_006,Books,History Book,33,3,99,3.0
+User_006,Home,Water Bottle,102,2,204,4.0
+User_016,Electronics,Laptop,1197,3,3591,3.0
+User_003,Books,Comic Book,36,4,144,1.0
+User_003,Beauty,Facial Cream,61,1,61,5.0
+User_007,Clothing,T-Shirt,25,4,100,5.0
+User_018,Clothing,Jacket,21,4,84,3.0
+User_016,Electronics,Tablet,930,2,1860,
+User_012,Home,Storage Box,13,1,13,4.0
+User_016,Beauty,Facial Cream,33,2,66,5.0
+User_020,Beauty,Lipstick,45,2,90,5.0
+User_003,Electronics,Wireless Earbuds,202,1,202,3.0
+User_014,Clothing,Jeans,68,3,204,5.0
+User_009,Books,Fiction Novel,13,1,13,4.0
+User_016,Books,History Book,26,4,104,4.0
+User_012,Beauty,Perfume,31,2,62,4.0
+User_006,Home,Coffee Mug,12,3,36,4.0
+User_001,Books,Fiction Novel,14,4,56,5.0
+User_019,Books,History Book,26,4,104,3.0
+User_014,Home,Coffee Mug,128,1,128,
+User_017,Home,Coffee Mug,120,3,360,4.0
+User_001,Beauty,Sunscreen,34,2,68,
+User_003,Clothing,Jeans,41,2,82,
+User_017,Electronics,Laptop,295,4,1180,4.0
+User_010,Clothing,Jacket,64,1,64,5.0
+User_007,Electronics,Tablet,734,4,2936,5.0
+User_014,Books,History Book,32,3,96,4.0
+User_002,Beauty,Lipstick,67,3,201,
+User_017,Books,Python Guide,15,3,45,4.0
+User_005,Electronics,Smart Watch,1053,4,4212,5.0
+User_004,Home,Water Bottle,98,3,294,5.0
+User_008,Books,Biography,27,4,108,5.0
+User_019,Electronics,Wireless Earbuds,1131,3,3393,3.0
+User_009,Books,Biography,10,2,20,
+User_015,Clothing,T-Shirt,118,1,118,3.0
+User_016,Home,Storage Box,26,1,26,4.0
+User_012,Clothing,Jacket,115,2,230,1.0
+User_014,Books,Biography,24,1,24,4.0
+User_020,Home,Water Bottle,148,2,296,5.0
+User_007,Books,Fiction Novel,39,2,78,5.0
+User_010,Home,Water Bottle,38,4,152,4.0
+User_019,Clothing,T-Shirt,83,1,83,3.0
+User_016,Clothing,T-Shirt,106,4,424,5.0
+User_020,Books,Python Guide,12,4,48,2.0
+User_019,Beauty,Shampoo,21,3,63,5.0
+User_008,Clothing,Jacket,58,1,58,2.0
+User_014,Clothing,Hoodie,49,3,147,2.0
+User_008,Home,Cushion,94,2,188,5.0
+User_009,Books,Python Guide,30,2,60,5.0
+User_004,Electronics,Smart Watch,1070,1,1070,4.0
+User_005,Electronics,Wireless Earbuds,1172,4,4688,2.0
+User_017,Home,Water Bottle,117,3,351,5.0
+User_003,Electronics,Laptop,111,4,444,5.0
+User_013,Beauty,Perfume,58,4,232,1.0
+User_009,Beauty,Facial Cream,18,3,54,
+User_020,Beauty,Sunscreen,25,1,25,2.0
+User_012,Electronics,Tablet,940,1,940,5.0
+User_016,Electronics,Smart Watch,1115,2,2230,2.0
+User_005,Beauty,Shampoo,27,3,81,2.0
+User_010,Clothing,Socks,31,1,31,5.0
+User_014,Home,Cushion,141,2,282,
+User_002,Home,Storage Box,87,4,348,4.0
+User_001,Books,Fiction Novel,16,1,16,4.0
+User_004,Books,History Book,38,4,152,4.0
+User_010,Clothing,Jacket,53,2,106,4.0
