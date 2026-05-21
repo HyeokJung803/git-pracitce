@@ -1,0 +1,11 @@
+1. TIL 작성: Today I Learn 
+: streamlit를 이용한 입출력 활용
+
+2. Keep 유지할 것
+: 배운 함수활용 유지
+
+3. problem 개선할 것
+: 코드 흐름을 잘 숙지 
+
+4. try 시도할 것
+: 다른 DB로 streamlit 시도해볼것
