@@ -1,9 +1,12 @@
 import streamlit as st
 import pandas as pd
+import os
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"data\clothing_data.csv")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, "data", "clothing_data.csv")
+    df = pd.read_csv(file_path)
     df['주문일자'] = pd.to_datetime(df['주문일자'])
     return df
 
