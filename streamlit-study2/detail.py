@@ -7,6 +7,19 @@ def load_data():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir, "data", "clothing_data.csv")
     df = pd.read_csv(file_path)
+    
+    if '총판매액' in df.columns:
+        if df['총판매액'].dtype == object:
+            df['총판매액'] = df['총판매액'].astype(str).str.replace(r'[$,]', '', regex=True).astype(float)
+        else:
+            df['총판매액'] = df['총판매액'].astype(float)
+            
+    if '판매수량' in df.columns:
+        if df['판매수량'].dtype == object:
+            df['판매수량'] = df['판매수량'].astype(str).str.replace(r'[$,]', '', regex=True).astype(float)
+        else:
+            df['판매수량'] = df['판매수량'].astype(float)
+
     df['주문일자'] = pd.to_datetime(df['주문일자'])
     return df
 

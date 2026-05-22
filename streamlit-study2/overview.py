@@ -7,6 +7,19 @@ def load_data():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir, "data", "clothing_data.csv")
     df = pd.read_csv(file_path)
+    
+    if '총판매액' in df.columns:
+        if df['총판매액'].dtype == object:
+            df['총판매액'] = df['총판매액'].astype(str).str.replace(r'[$,]', '', regex=True).astype(float)
+        else:
+            df['총판매액'] = df['총판매액'].astype(float)
+            
+    if '판매수량' in df.columns:
+        if df['판매수량'].dtype == object:
+            df['판매수량'] = df['판매수량'].astype(str).str.replace(r'[$,]', '', regex=True).astype(float)
+        else:
+            df['판매수량'] = df['판매수량'].astype(float)
+
     df['주문일자'] = pd.to_datetime(df['주문일자'])
     return df
 
@@ -36,19 +49,19 @@ st.title("📊 판매 실적 요약 대시보드")
 st.caption(f"현재 필터: 카테고리 [{st.session_state.selected_category}] | 브랜드 [{st.session_state.selected_brand}]")
 st.markdown("---")
 
-total_sales = filtered_df['총판매액'].sum()
-total_qty = filtered_df['판매수량'].sum()
-avg_rating = filtered_df['리뷰평점'].mean()
+total_sales = filtered_df['총판매액'].sum() if '총판매액' in filtered_df.columns else 0
+total_qty = filtered_df['판매수량'].sum() if '판매수량' in filtered_df.columns else 0
+avg_rating = filtered_df['리뷰평점'].mean() if '리뷰평점' in filtered_df.columns else 0
 
 col1, col2, col3 = st.columns(3)
-col1.metric("💡 총 판매액", f"{total_sales:,} 원")
-col2.metric("📦 총 판매수량", f"{total_qty:,} 개")
+col1.metric("💡 총 판매액", f"{int(total_sales):,} 원")
+col2.metric("📦 총 판매수량", f"{int(total_qty):,} 개")
 col3.metric("⭐ 평균 리뷰 평점", f"{avg_rating:.2f} / 5.0" if not pd.isna(avg_rating) else "N/A")
 
 st.markdown("---")
 
 st.subheader("📈 매출 추이 요약")
-if not filtered_df.empty:
+if not filtered_df.empty and '총판매액' in filtered_df.columns:
     trend_df = filtered_df.set_index('주문일자').resample('D')['총판매액'].sum().reset_index()
     st.line_chart(data=trend_df, x='주문일자', y='총판매액')
 else:
