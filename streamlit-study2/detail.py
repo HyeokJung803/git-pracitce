@@ -121,4 +121,8 @@ else:
     with col6:
         st.write("**성별 판매 비율**")
         gender_data = display_df.groupby('성별')['판매수량'].sum()
-        st.bar_chart(gender_
+        st.bar_chart(gender_data)
+    with col7:
+        st.write("**고객 연령대 분포 상세**")
+        age_dist = display_df['고객연령'].value_counts().sort_index()
+        st.bar_chart(age_dist)
