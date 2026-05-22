@@ -53,14 +53,20 @@ total_sales = filtered_df['총판매액'].sum() if '총판매액' in filtered_df
 total_qty = filtered_df['판매수량'].sum() if '판매수량' in filtered_df.columns else 0
 avg_rating = filtered_df['리뷰평점'].mean() if '리뷰평점' in filtered_df.columns else 0
 
+# 금액 포맷팅 최적화 (억 단위 쪼개기 및 쉼표 추가)
+if total_sales >= 100000000:
+    sales_display = f"{total_sales / 100000000:,.2f} 억 원"
+else:
+    sales_display = f"{int(total_sales):,} 원"
+
 col1, col2, col3 = st.columns(3)
-col1.metric("💡 총 판매액", f"{int(total_sales):,} 원")
+col1.metric("💡 총 판매액", sales_display)
 col2.metric("📦 총 판매수량", f"{int(total_qty):,} 개")
 col3.metric("⭐ 평균 리뷰 평점", f"{avg_rating:.2f} / 5.0" if not pd.isna(avg_rating) else "N/A")
 
 st.markdown("---")
 
-st.subheader("📈 매출 추이 요약")
+st.subheader("📈 매출 추이 요약 (단위: 원)")
 if not filtered_df.empty and '총판매액' in filtered_df.columns:
     trend_df = filtered_df.set_index('주문일자').resample('D')['총판매액'].sum().reset_index()
     st.line_chart(data=trend_df, x='주문일자', y='총판매액')

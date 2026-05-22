@@ -83,10 +83,13 @@ else:
         판매수량합계=('판매수량', 'sum')
     ).sort_values(by='매출액합계', ascending=False).head(10)
     
+    # 그래프 시인성을 위해 금액 단위를 백만 단위(M) 혹은 억 단위로 나누어 가공
+    product_stats['매출액(억 원)'] = product_stats['매출액합계'] / 100000000
+    
     col1, col2 = st.columns(2)
     with col1:
-        st.write("**상품별 총 매출액 (원)**")
-        st.bar_chart(product_stats['매출액합계'])
+        st.write("**상품별 총 매출액 (단위: 억 원)**")
+        st.bar_chart(product_stats['매출액(억 원)'])
     with col2:
         st.write("**상품별 총 판매수량 (개)**")
         st.bar_chart(product_stats['판매수량합계'])
@@ -94,18 +97,21 @@ else:
     st.markdown("---")
 
     st.markdown("### 🎨 상품 옵션 선호도 분석")
+    
+    # 브랜드 점유율 금액도 억 단위 변환
+    brand_share = (display_df.groupby('브랜드')['총판매액'].sum() / 100000000).sort_values(ascending=False)
+    color_share = display_df.groupby('색상')['판매수량'].sum().sort_values(ascending=False).head(7)
+    size_share = display_df.groupby('사이즈')['판매수량'].sum().sort_values(ascending=False)
+    
     col3, col4, col5 = st.columns(3)
     with col3:
-        st.write("**브랜드별 점유율 (매출액)**")
-        brand_share = display_df.groupby('브랜드')['총판매액'].sum().sort_values(ascending=False)
+        st.write("**브랜드별 점유율 (단위: 억 원)**")
         st.bar_chart(brand_share)
     with col4:
         st.write("**인기 색상 순위 (판매량)**")
-        color_share = display_df.groupby('색상')['판매수량'].sum().sort_values(ascending=False).head(7)
         st.bar_chart(color_share)
     with col5:
         st.write("**사이즈 수요 분포 (판매량)**")
-        size_share = display_df.groupby('사이즈')['판매수량'].sum().sort_values(ascending=False)
         st.bar_chart(size_share)
 
     st.markdown("---")
@@ -115,8 +121,4 @@ else:
     with col6:
         st.write("**성별 판매 비율**")
         gender_data = display_df.groupby('성별')['판매수량'].sum()
-        st.bar_chart(gender_data)
-    with col7:
-        st.write("**고객 연령대 분포 상세**")
-        age_dist = display_df['고객연령'].value_counts().sort_index()
-        st.bar_chart(age_dist)
+        st.bar_chart(gender_
